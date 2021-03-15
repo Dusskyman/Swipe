@@ -9,11 +9,11 @@ class EnterScreen1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: EnterBackground(
+        body: EnterBackground(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-         SwipeLogo(),
+          SwipeLogo(),
           Container(
             margin: const EdgeInsets.symmetric(vertical: 50),
             width: 205,

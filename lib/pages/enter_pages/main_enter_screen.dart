@@ -7,32 +7,38 @@ class EnterPage extends StatelessWidget {
   final PageController controller = PageController(initialPage: 0);
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: PageView(
-        controller: controller,
-        // physics: NeverScrollableScrollPhysics(),
-        children: [
-          EnterScreen1(
-            onTap: () {
-              controller.animateToPage(
-                1,
-                duration: Duration(seconds: 1),
-                curve: Curves.easeInOut,
-              );
-            },
-          ),
-          EnterScreen2(
-            onTap: () {
-              controller.animateToPage(
-                2,
-                duration: Duration(seconds: 1),
-                curve: Curves.easeInOut,
-              );
-            },
-          ),
-          EnterScreen3(),
-        ],
-      ),
+    return PageView(
+      controller: controller,
+      physics: NeverScrollableScrollPhysics(),
+      children: [
+        EnterScreen1(
+          onTap: () {
+            controller.animateToPage(
+              1,
+              duration: Duration(seconds: 1),
+              curve: Curves.easeInOut,
+            );
+          },
+        ),
+        EnterScreen2(
+          onTap: () {
+            controller.animateToPage(
+              2,
+              duration: Duration(seconds: 1),
+              curve: Curves.easeInOut,
+            );
+          },
+        ),
+        EnterScreen3(
+          onTap: () {
+            controller.animateToPage(
+              0,
+              duration: Duration(seconds: 1),
+              curve: Curves.easeInOut,
+            );
+          },
+        )
+      ],
     );
   }
 }
