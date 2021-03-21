@@ -1,0 +1,3 @@
+class FirestoreSingIn {
+ bool isRegistered;
+}

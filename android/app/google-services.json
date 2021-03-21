@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "273168463674",
+    "project_id": "swipe-5c72b",
+    "storage_bucket": "swipe-5c72b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:273168463674:android:8d9a9106f67fd7bfb54203",
+        "android_client_info": {
+          "package_name": "com.example.swipe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "273168463674-gouo3il4900dudhkkeaiciva8muvh3s5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDFXAE_zlHs4IS_X9aUovRJyNcfwvjl3M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "273168463674-gouo3il4900dudhkkeaiciva8muvh3s5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
