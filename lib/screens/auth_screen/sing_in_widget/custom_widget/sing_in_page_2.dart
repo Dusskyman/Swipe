@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'package:flutter_test_pj/global/custom_widgets/TextFields/custom_text_field.dart';
 import 'package:flutter_test_pj/global/custom_widgets/backgrounds/swipe_logo.dart';
 import 'package:flutter_test_pj/global/custom_widgets/backgrounds/enter_screen_background.dart';
 import 'package:flutter_test_pj/global/custom_widgets/buttons/custom_button.dart';
-import 'package:flutter_test_pj/screens/auth_screen/sing_in_widget/main_enter_screen.dart';
 
-class SingInPage2 extends StatefulWidget {
-  @override
-  _SingInPage2State createState() => _SingInPage2State();
-}
+class SingInPage2 extends StatelessWidget {
+  final TextEditingController textcontroller;
+  final GestureTapCallback onTap;
+  final ValueChanged<String> onComleted;
+  static String phone;
+  static GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
-class _SingInPage2State extends State<SingInPage2> {
-  final TextEditingController textcontroller = TextEditingController();
+  SingInPage2({this.onTap, this.textcontroller, this.onComleted});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,18 +24,18 @@ class _SingInPage2State extends State<SingInPage2> {
           children: [
             SwipeLogo(),
             CustomTextField(
+              onChanged: (value) => phone = value,
+              formatters: [
+                FilteringTextInputFormatter.allow(RegExp(r'[+0-9]'))
+              ],
               textcontroller: textcontroller,
               margin: const EdgeInsets.fromLTRB(0, 72, 0, 25),
               text: 'Телефон',
             ),
             CustomButton(
               onTap: () {
-                textcontroller.clear();
-                EnterPage.enterPageController.animateToPage(
-                  2,
-                  duration: Duration(seconds: 1),
-                  curve: Curves.easeInOut,
-                );
+                onComleted(phone);
+                FocusScope.of(context).unfocus();
               },
               text: 'Далее',
             )

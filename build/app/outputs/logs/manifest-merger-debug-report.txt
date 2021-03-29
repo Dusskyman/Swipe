@@ -9,6 +9,7 @@ MERGED from [:firebase_analytics] D:\Dart_Programs\Flutter_app\test_app\flutter_
 MERGED from [:firebase_auth] D:\Dart_Programs\Flutter_app\test_app\flutter_test_pj\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
 MERGED from [:cloud_firestore] D:\Dart_Programs\Flutter_app\test_app\flutter_test_pj\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
 MERGED from [:firebase_core] D:\Dart_Programs\Flutter_app\test_app\flutter_test_pj\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
+MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\77pha\.gradle\caches\transforms-2\files-2.1\15ed0d3b74cf77ee0ae71a8d59de56f0\multidex-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-auth:20.0.3] C:\Users\77pha\.gradle\caches\transforms-2\files-2.1\849a22a567f2859f56012d8c57af082f\jetified-firebase-auth-20.0.3\AndroidManifest.xml:17:1-83:12
 MERGED from [com.google.firebase:firebase-firestore:22.1.1] C:\Users\77pha\.gradle\caches\transforms-2\files-2.1\9b36a76fe5d03c39f56603eacb2b9990\jetified-firebase-firestore-22.1.1\AndroidManifest.xml:2:1-26:12
 MERGED from [com.google.android.gms:play-services-auth-api-phone:17.4.0] C:\Users\77pha\.gradle\caches\transforms-2\files-2.1\809dc7605bec7826ba35137dbaad02b8\play-services-auth-api-phone-17.4.0\AndroidManifest.xml:2:1-7:12
@@ -180,6 +181,8 @@ MERGED from [:cloud_firestore] D:\Dart_Programs\Flutter_app\test_app\flutter_tes
 MERGED from [:cloud_firestore] D:\Dart_Programs\Flutter_app\test_app\flutter_test_pj\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:firebase_core] D:\Dart_Programs\Flutter_app\test_app\flutter_test_pj\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:firebase_core] D:\Dart_Programs\Flutter_app\test_app\flutter_test_pj\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\77pha\.gradle\caches\transforms-2\files-2.1\15ed0d3b74cf77ee0ae71a8d59de56f0\multidex-2.0.0\AndroidManifest.xml:20:5-43
+MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\77pha\.gradle\caches\transforms-2\files-2.1\15ed0d3b74cf77ee0ae71a8d59de56f0\multidex-2.0.0\AndroidManifest.xml:20:5-43
 MERGED from [com.google.firebase:firebase-auth:20.0.3] C:\Users\77pha\.gradle\caches\transforms-2\files-2.1\849a22a567f2859f56012d8c57af082f\jetified-firebase-auth-20.0.3\AndroidManifest.xml:21:5-44
 MERGED from [com.google.firebase:firebase-auth:20.0.3] C:\Users\77pha\.gradle\caches\transforms-2\files-2.1\849a22a567f2859f56012d8c57af082f\jetified-firebase-auth-20.0.3\AndroidManifest.xml:21:5-44
 MERGED from [com.google.firebase:firebase-firestore:22.1.1] C:\Users\77pha\.gradle\caches\transforms-2\files-2.1\9b36a76fe5d03c39f56603eacb2b9990\jetified-firebase-firestore-22.1.1\AndroidManifest.xml:7:5-9:41

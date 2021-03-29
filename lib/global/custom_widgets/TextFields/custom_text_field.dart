@@ -5,15 +5,20 @@ class CustomTextField extends StatelessWidget {
   final TextEditingController textcontroller;
   final EdgeInsetsGeometry margin;
   final TextInputType keyboardType;
+  final VoidCallback onEditingComplete;
+  final List<TextInputFormatter> formatters;
+  final ValueChanged<String> onChanged;
 
   final String text;
 
-  CustomTextField({
-    this.keyboardType,
-    this.textcontroller,
-    this.text,
-    this.margin,
-  });
+  CustomTextField(
+      {this.keyboardType,
+      this.textcontroller,
+      this.text,
+      this.margin,
+      this.onEditingComplete,
+      this.formatters,
+      this.onChanged});
 
   @override
   Widget build(BuildContext context) {
@@ -31,8 +36,10 @@ class CustomTextField extends StatelessWidget {
         ),
       ),
       child: TextFormField(
+        onChanged: onChanged,
+        onEditingComplete: onEditingComplete,
         keyboardType: keyboardType ?? TextInputType.phone,
-        inputFormatters: <TextInputFormatter>[],
+        inputFormatters: formatters,
         controller: textcontroller,
         style: TextStyle(
           fontSize: 20,

@@ -1,13 +1,18 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 import 'package:flutter_test_pj/global/custom_widgets/backgrounds/swipe_logo.dart';
 import 'package:flutter_test_pj/global/custom_widgets/backgrounds/enter_screen_background.dart';
 import 'package:flutter_test_pj/global/custom_widgets/buttons/custom_button.dart';
 import 'package:flutter_test_pj/global/custom_widgets/buttons/custom_text_button.dart';
-import 'package:flutter_test_pj/screens/auth_screen/sing_in_widget/main_enter_screen.dart';
 import 'package:flutter_test_pj/screens/auth_screen/sing_up_widget/sing_up_screen.dart';
 
 class SingInPage1 extends StatelessWidget {
+  final GestureTapCallback onTap;
+
+  SingInPage1({this.onTap});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,11 +36,7 @@ class SingInPage1 extends StatelessWidget {
             ),
             CustomButton(
               onTap: () {
-                EnterPage.enterPageController.animateToPage(
-                  1,
-                  duration: Duration(seconds: 1),
-                  curve: Curves.easeInOut,
-                );
+                onTap();
               },
               text: 'Войти',
             ),

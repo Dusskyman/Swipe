@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_test_pj/screens/auth_screen/sing_in_widget/main_enter_screen.dart';
+import 'package:flutter/services.dart';
 
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_test_pj/screens/auth_screen/sing_in_widget/main_enter_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -10,16 +11,20 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  final Future<FirebaseApp> _fbApp = Firebase.initializeApp();
-
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+      ),
+    );
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Swipe',
       theme: ThemeData(
         primarySwatch: Colors.amber,
       ),
-      home: EnterPage(),
+      home: EnterScreen(),
     );
   }
 }
