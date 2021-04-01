@@ -46,6 +46,7 @@ class _OtpCustomFieldsState extends State<OtpCustomFields> {
 
   @override
   void dispose() {
+    // ignore: avoid_function_literals_in_foreach_calls
     _textControllers.forEach((controller) {
       controller.dispose();
     });
@@ -111,6 +112,7 @@ class _OtpCustomFieldsState extends State<OtpCustomFields> {
             FocusScope.of(context).requestFocus(_focusNodes[i + 1]);
 
           String currentPin = '';
+          // ignore: avoid_function_literals_in_foreach_calls
           _pin.forEach((String val) {
             currentPin += val;
           });

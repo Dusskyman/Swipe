@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter_test_pj/models/user.dart';
+import 'package:flutter_test_pj/models/user_api/user.dart';
 
 class UserToDataBase {
   final String uid;

@@ -11,7 +11,6 @@ import 'package:flutter_test_pj/screens/auth_screen/sing_in_widget/custom_widget
 import 'package:flutter_test_pj/screens/home_screen/home_screen.dart';
 
 class EnterScreen extends StatefulWidget {
-  final TextEditingController _textcontroller = TextEditingController();
 
   @override
   _EnterScreenState createState() => _EnterScreenState();
