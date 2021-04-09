@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_test_pj/global/custom_widgets/buttons/custom_text_button.dart';
 import 'package:flutter_test_pj/screens/auth_screen/sing_in_widget/api/firestore_api.dart';
 import 'package:flutter_test_pj/screens/auth_screen/sing_in_widget/custom_widget/sing_in_page_3.dart';
 import 'package:flutter_test_pj/screens/auth_screen/sing_up_widget/api/firestore_adduser.dart';
@@ -41,6 +42,19 @@ class _SingUpScreenState extends State<SingUpScreen> {
         phoneNumber: phone,
         verificationCompleted: (PhoneAuthCredential credential) {},
         verificationFailed: (FirebaseAuthException e) {
+          showDialog(
+              context: context,
+              child: SimpleDialog(
+                backgroundColor: Colors.black87,
+                titlePadding: const EdgeInsets.all(10),
+                title: Text(
+                  'Неправильно указан номер!',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
+                  ),
+                ),
+              ));
           log('Неправильно указан номер!');
         },
         codeSent: (String verificationId, int resendToken) {
@@ -50,6 +64,26 @@ class _SingUpScreenState extends State<SingUpScreen> {
         codeAutoRetrievalTimeout: (String verificationId) {},
       );
     } else {
+      showDialog(
+        context: context,
+        child: AlertDialog(
+          backgroundColor: Colors.black,
+          title: Text(
+            'Пользователь уже зарегистрирован',
+            style: TextStyle(color: Colors.white),
+          ),
+          content: CustomText(
+            text: 'Войти',
+            color: Colors.blue,
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => SingUpScreen(),
+              ),
+            ),
+          ),
+        ),
+      );
       log('Номер уже зарегистрирован');
     }
   }

@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 
 class SwipeLogo extends StatelessWidget {
+  final double height;
+  final double width;
+  SwipeLogo({
+    this.height,
+    this.width,
+  });
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -8,7 +14,8 @@ class SwipeLogo extends StatelessWidget {
       children: [
         Image.asset(
           'assets/images/swipe.png',
-          height: 40,
+          height: height ?? 40,
+          width: width ?? 80,
           fit: BoxFit.contain,
         ),
         Container(
@@ -16,7 +23,7 @@ class SwipeLogo extends StatelessWidget {
           child: Text(
             'свайп',
             style: TextStyle(
-              fontSize: 42,
+              fontSize: height ?? 42,
               color: Colors.white,
               fontWeight: FontWeight.w900,
             ),

@@ -3,15 +3,16 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_test_pj/global/custom_widgets/buttons/custom_text_button.dart';
 import 'package:flutter_test_pj/screens/auth_screen/sing_in_widget/api/firestore_api.dart';
 
 import 'package:flutter_test_pj/screens/auth_screen/sing_in_widget/custom_widget/sing_in_page_1.dart';
 import 'package:flutter_test_pj/screens/auth_screen/sing_in_widget/custom_widget/sing_in_page_2.dart';
 import 'package:flutter_test_pj/screens/auth_screen/sing_in_widget/custom_widget/sing_in_page_3.dart';
+import 'package:flutter_test_pj/screens/auth_screen/sing_up_widget/sing_up_screen.dart';
 import 'package:flutter_test_pj/screens/home_screen/home_screen.dart';
 
 class EnterScreen extends StatefulWidget {
-
   @override
   _EnterScreenState createState() => _EnterScreenState();
 }
@@ -52,6 +53,26 @@ class _EnterScreenState extends State<EnterScreen> {
         codeAutoRetrievalTimeout: (String verificationId) {},
       );
     } else {
+      showDialog(
+        context: context,
+        child: AlertDialog(
+          backgroundColor: Colors.black,
+          title: Text(
+            'Пользователь еще не зарегистрирован',
+            style: TextStyle(color: Colors.white),
+          ),
+          content: CustomText(
+            text: 'Зарегистрироваться!',
+            color: Colors.blue,
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => SingUpScreen(),
+              ),
+            ),
+          ),
+        ),
+      );
       log('Пользователь еще не зарегистрирован!');
     }
   }

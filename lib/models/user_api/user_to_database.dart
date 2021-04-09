@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter_test_pj/models/user_api/user.dart';
+import 'package:flutter_test_pj/models/user_api/user_from_database.dart';
 
 class UserToDataBase {
   final String uid;
@@ -12,7 +12,7 @@ class UserToDataBase {
   final Timestamp createdAt;
   final Timestamp updatedAt;
 
-  UserToDataBase(User user)
+  UserToDataBase(UserFromDatabase user)
       : uid = user.uid,
         name = user.name,
         surname = user.surname,
