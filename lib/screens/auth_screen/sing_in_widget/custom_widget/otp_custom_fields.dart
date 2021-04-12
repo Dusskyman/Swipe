@@ -65,7 +65,7 @@ class _OtpCustomFieldsState extends State<OtpCustomFields> {
   }
 
   Widget buildTextField(BuildContext context, int i) {
-    return Container(
+    return SizedBox(
       width: widget.fieldWidth,
       child: TextField(
         controller: _textControllers[i],
@@ -108,9 +108,9 @@ class _OtpCustomFieldsState extends State<OtpCustomFields> {
           });
 
           if (str.isNotEmpty) _focusNodes[i].unfocus();
-          if (i + 1 != widget.length && str.isNotEmpty)
+          if (i + 1 != widget.length && str.isNotEmpty) {
             FocusScope.of(context).requestFocus(_focusNodes[i + 1]);
-
+          }
           String currentPin = '';
           // ignore: avoid_function_literals_in_foreach_calls
           _pin.forEach((String val) {

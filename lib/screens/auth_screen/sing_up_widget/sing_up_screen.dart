@@ -38,6 +38,7 @@ class _SingUpScreenState extends State<SingUpScreen> {
 
   void verifyPhoneUser(String phone) async {
     if (await FireStoreApi.phoneIsRegistred(phone) == false) {
+      await _auth.setLanguageCode('ru');
       await _auth.verifyPhoneNumber(
         phoneNumber: phone,
         verificationCompleted: (PhoneAuthCredential credential) {},
@@ -55,7 +56,7 @@ class _SingUpScreenState extends State<SingUpScreen> {
                   ),
                 ),
               ));
-          log('Неправильно указан номер!');
+          log(e.message);
         },
         codeSent: (String verificationId, int resendToken) {
           _verificationId = verificationId;
@@ -64,7 +65,7 @@ class _SingUpScreenState extends State<SingUpScreen> {
         codeAutoRetrievalTimeout: (String verificationId) {},
       );
     } else {
-      showDialog(
+      await showDialog(
         context: context,
         child: AlertDialog(
           backgroundColor: Colors.black,
@@ -89,7 +90,7 @@ class _SingUpScreenState extends State<SingUpScreen> {
   }
 
   void _signIn(String smscode) async {
-    PhoneAuthCredential phoneAuthCredential = PhoneAuthProvider.credential(
+   final PhoneAuthCredential phoneAuthCredential = PhoneAuthProvider.credential(
       verificationId: _verificationId,
       smsCode: smscode,
     );
@@ -98,6 +99,10 @@ class _SingUpScreenState extends State<SingUpScreen> {
         (value) async {
           if (value.user != null) {
             await addUser.addUser(SingUpPage2.text);
+            await Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(builder: (context) => HomeScreen()),
+                (route) => false);
           }
         },
       );
@@ -122,10 +127,6 @@ class _SingUpScreenState extends State<SingUpScreen> {
         SingInPage3(
           onCompleted: (String smscode) {
             _signIn(smscode);
-            Navigator.pushAndRemoveUntil(
-                context,
-                MaterialPageRoute(builder: (context) => HomeScreen()),
-                (route) => false);
           },
         ),
       ],

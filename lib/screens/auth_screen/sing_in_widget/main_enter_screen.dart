@@ -39,6 +39,7 @@ class _EnterScreenState extends State<EnterScreen> {
   void verifyPhoneUser(String phone) async {
     setState(() {});
     if (await FireStoreApi.phoneIsRegistred(phone)) {
+      await _auth.setLanguageCode('ru');
       await _auth.verifyPhoneNumber(
         phoneNumber: phone,
         verificationCompleted: (PhoneAuthCredential credential) {},
@@ -53,7 +54,7 @@ class _EnterScreenState extends State<EnterScreen> {
         codeAutoRetrievalTimeout: (String verificationId) {},
       );
     } else {
-      showDialog(
+     await showDialog(
         context: context,
         child: AlertDialog(
           backgroundColor: Colors.black,
@@ -78,12 +79,16 @@ class _EnterScreenState extends State<EnterScreen> {
   }
 
   void _signIn(String smscode) async {
-    PhoneAuthCredential phoneAuthCredential = PhoneAuthProvider.credential(
+   final PhoneAuthCredential phoneAuthCredential = PhoneAuthProvider.credential(
       verificationId: _verificationId,
       smsCode: smscode,
     );
     try {
       await _auth.signInWithCredential(phoneAuthCredential);
+      await Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(builder: (context) => HomeScreen()),
+          (route) => false);
     } catch (e) {
       log('Неправильный верификационный код');
     }
@@ -105,10 +110,6 @@ class _EnterScreenState extends State<EnterScreen> {
         SingInPage3(
           onCompleted: (String smscode) {
             _signIn(smscode);
-            Navigator.pushAndRemoveUntil(
-                context,
-                MaterialPageRoute(builder: (context) => HomeScreen()),
-                (route) => false);
           },
         ),
       ],

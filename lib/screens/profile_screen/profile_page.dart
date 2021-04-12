@@ -1,12 +1,16 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'dart:developer';
+
 import 'package:firebase_auth/firebase_auth.dart';
+
 import 'package:flutter/material.dart';
+
 import 'package:flutter_test_pj/global/custom_widgets/app_bars/main_app_bar.dart';
 import 'package:flutter_test_pj/global/custom_widgets/buttons/custom_text_button.dart';
 import 'package:flutter_test_pj/models/user_api/user_from_database.dart';
+import 'package:flutter_test_pj/models/user_api/user_to_database.dart';
 import 'package:flutter_test_pj/screens/auth_screen/sing_in_widget/main_enter_screen.dart';
 import 'package:flutter_test_pj/screens/profile_screen/api/user_data_api.dart';
-import 'package:flutter_test_pj/screens/profile_screen/custom_widget/user_card.dart';
+import 'package:flutter_test_pj/screens/profile_screen/custom_widget/avatar.dart';
 import 'package:flutter_test_pj/screens/profile_screen/custom_widget/user_expansion_tile.dart';
 import 'package:flutter_test_pj/screens/profile_screen/custom_widget/user_textfield.dart';
 
@@ -16,7 +20,6 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-  Map<String, dynamic> usermap = {};
   @override
   void initState() {
     UserDataApi.getData();
@@ -25,6 +28,7 @@ class _ProfilePageState extends State<ProfilePage> {
 
   @override
   Widget build(BuildContext context) {
+    UserFromDatabase userData = UserFromDatabase();
     return Scaffold(
       appBar: MainAppBar(
         title: 'Личный кабинет',
@@ -63,7 +67,32 @@ class _ProfilePageState extends State<ProfilePage> {
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
-                      UserCard(),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 20),
+                        child: Row(
+                          children: [
+                            Avatar(),
+                            Padding(
+                              padding: const EdgeInsets.all(20),
+                              child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Padding(
+                                      padding:
+                                          const EdgeInsets.only(bottom: 10),
+                                      child: Text(
+                                        '${snapshot.data.name ?? ''} ${snapshot.data.surname ?? ''}',
+                                        style: TextStyle(
+                                          fontSize: 20,
+                                        ),
+                                      ),
+                                    ),
+                                    Text('${snapshot.data.email ?? ''}'),
+                                  ]),
+                            ),
+                          ],
+                        ),
+                      ),
                       Padding(
                         padding: const EdgeInsets.only(top: 30),
                       ),
@@ -72,19 +101,32 @@ class _ProfilePageState extends State<ProfilePage> {
                         children: [
                           UserTextField(
                             title: 'Имя',
-                            hintText: snapshot.data.name,
+                            hintText: snapshot.data.name ?? 'Имя',
+                            onSubmitted: (value) {
+                              UserDataApi.uploadData(name: value);
+                              setState(() {});
+                            },
                           ),
                           UserTextField(
                             title: 'Фамилия',
-                            hintText: snapshot.data.surname,
+                            hintText: snapshot.data.surname ?? 'Фамилия',
+                            onSubmitted: (value) {
+                              UserDataApi.uploadData(surname: value);
+                              setState(() {});
+                            },
                           ),
                           UserTextField(
+                            readOnly: true,
                             title: 'Телефон',
-                            hintText: snapshot.data.phone,
+                            hintText: snapshot.data.phone ?? 'Телефон',
                           ),
                           UserTextField(
                             title: 'Email',
-                            hintText: snapshot.data.email,
+                            hintText: snapshot.data.email ?? 'Email',
+                            onSubmitted: (value) {
+                              UserDataApi.uploadData(email: value);
+                              setState(() {});
+                            },
                           ),
                         ],
                       ),

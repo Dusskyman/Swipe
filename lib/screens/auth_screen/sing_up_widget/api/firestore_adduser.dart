@@ -9,7 +9,7 @@ class AddUser {
   CollectionReference users = FirebaseFirestore.instance.collection('users');
 
   Future<void> addUser(Map<String, String> text) async {
-    UserFromDatabase user = UserFromDatabase(
+   final UserFromDatabase user = UserFromDatabase(
       name: text['name'],
       surname: text['surname'],
       phone: text['phone'],

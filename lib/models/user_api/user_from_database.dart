@@ -42,6 +42,7 @@ class UserFromDatabase {
     Timestamp updatedAt,
   }) =>
       UserFromDatabase(
+        uid: uid,
         name: name ?? this.name,
         surname: surname ?? this.surname,
         phone: phone ?? this.phone,

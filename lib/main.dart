@@ -5,7 +5,6 @@ import 'package:flutter/services.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_test_pj/screens/auth_screen/sing_in_widget/main_enter_screen.dart';
 import 'package:flutter_test_pj/screens/home_screen/home_screen.dart';
-import 'package:flutter_test_pj/screens/profile_screen/profile_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,7 +19,6 @@ class MyApp extends StatelessWidget {
     SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle(
           statusBarColor: Colors.transparent,
-          
           statusBarIconBrightness: Brightness.dark),
     );
     return MaterialApp(

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import 'package:flutter_test_pj/global/custom_widgets/backgrounds/swipe_logo.dart';
@@ -40,10 +39,9 @@ class SingInPage1 extends StatelessWidget {
               text: 'Войти',
             ),
             Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 100, vertical: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 20),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Text(
                     'Впервые у нас?',

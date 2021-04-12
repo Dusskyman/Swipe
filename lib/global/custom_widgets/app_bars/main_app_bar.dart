@@ -19,7 +19,7 @@ class MainAppBar extends PreferredSize {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Container(
+      child: SizedBox(
         height: preferredSize.height,
         child: AppBar(
           leading: IconButton(

@@ -4,7 +4,7 @@
             "outputFile": "D:\\Dart_Programs\\Flutter_app\\test_app\\flutter_test_pj\\build\\cloud_firestore\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-et\\values-et.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\77pha\\.gradle\\caches\\transforms-2\\files-2.1\\e84e05e0bb9b73e88efcd5741f4846c4\\jetified-play-services-basement-17.0.0\\res\\values-et\\values.xml",
+                    "source": "C:\\Users\\77pha\\.gradle\\caches\\transforms-2\\files-2.1\\0a5a645cfb9cba24dedf877a36e89b76\\jetified-play-services-basement-17.0.0\\res\\values-et\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\77pha\\.gradle\\caches\\transforms-2\\files-2.1\\a98d174f43943e44235aa13f5f5458ec\\play-services-base-17.0.0\\res\\values-et\\values.xml",
+                    "source": "C:\\Users\\77pha\\.gradle\\caches\\transforms-2\\files-2.1\\31ccf8990c7eeaa95ece729ec8833618\\play-services-base-17.0.0\\res\\values-et\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\77pha\\.gradle\\caches\\transforms-2\\files-2.1\\28e91832122b5dc7de235c04c0b3d0d2\\core-1.1.0\\res\\values-et\\values-et.xml",
+                    "source": "C:\\Users\\77pha\\.gradle\\caches\\transforms-2\\files-2.1\\c82bf40584b9a53c31dba07a8a48f301\\core-1.1.0\\res\\values-et\\values-et.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -60,7 +60,7 @@
             "outputFile": "D:\\Dart_Programs\\Flutter_app\\test_app\\flutter_test_pj\\build\\cloud_firestore\\intermediates\\res\\merged\\release\\values-et\\values-et.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\77pha\\.gradle\\caches\\transforms-2\\files-2.1\\e84e05e0bb9b73e88efcd5741f4846c4\\jetified-play-services-basement-17.0.0\\res\\values-et\\values.xml",
+                    "source": "C:\\Users\\77pha\\.gradle\\caches\\transforms-2\\files-2.1\\0a5a645cfb9cba24dedf877a36e89b76\\jetified-play-services-basement-17.0.0\\res\\values-et\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -77,7 +77,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\77pha\\.gradle\\caches\\transforms-2\\files-2.1\\a98d174f43943e44235aa13f5f5458ec\\play-services-base-17.0.0\\res\\values-et\\values.xml",
+                    "source": "C:\\Users\\77pha\\.gradle\\caches\\transforms-2\\files-2.1\\31ccf8990c7eeaa95ece729ec8833618\\play-services-base-17.0.0\\res\\values-et\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -94,7 +94,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\77pha\\.gradle\\caches\\transforms-2\\files-2.1\\28e91832122b5dc7de235c04c0b3d0d2\\core-1.1.0\\res\\values-et\\values-et.xml",
+                    "source": "C:\\Users\\77pha\\.gradle\\caches\\transforms-2\\files-2.1\\c82bf40584b9a53c31dba07a8a48f301\\core-1.1.0\\res\\values-et\\values-et.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

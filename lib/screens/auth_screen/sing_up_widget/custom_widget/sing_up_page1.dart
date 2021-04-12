@@ -5,7 +5,6 @@ import 'package:flutter_test_pj/global/custom_widgets/backgrounds/swipe_logo.dar
 import 'package:flutter_test_pj/global/custom_widgets/buttons/custom_button.dart';
 import 'package:flutter_test_pj/global/custom_widgets/buttons/custom_text_button.dart';
 
-
 class SingUpPage1 extends StatelessWidget {
   final VoidCallback onTap;
   SingUpPage1({this.onTap});
@@ -32,10 +31,9 @@ class SingUpPage1 extends StatelessWidget {
               text: 'Регистрация',
             ),
             Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 110, vertical: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 90, vertical: 10),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Text(
                     'Уже есть аккаунт?',

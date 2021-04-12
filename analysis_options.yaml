@@ -76,8 +76,6 @@ linter:
 
 
 analyzer:
-  enable-experiment:
-    - spread-collections
   exclude: 
     - "build/"
     - "/*.g.dart"
