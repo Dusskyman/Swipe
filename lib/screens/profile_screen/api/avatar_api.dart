@@ -11,7 +11,7 @@ class AvatarApi {
         .putFile(avatar);
   }
 
-  static Future<String> AvatarFromStorage() async {
+  static Future<String> avatarFromStorage() async {
     try {
       return await FirebaseStorage.instance
           .ref('${FirebaseAuth.instance.currentUser.uid}/avatar')

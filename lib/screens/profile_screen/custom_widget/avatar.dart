@@ -41,7 +41,7 @@ class _AvatarState extends State<Avatar> {
   }
 
   Future<Widget> loadImage() async {
-    _imageUrl = await AvatarApi.AvatarFromStorage();
+    _imageUrl = await AvatarApi.avatarFromStorage();
     if (_imageUrl != null) {
       return ClipRRect(
           borderRadius: BorderRadius.circular(50),
